@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Search,
+  Rocket,
   BarChart2,
   FileText,
   Activity,
@@ -85,45 +85,45 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-sky-400 to-blue-500 text-white py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-sky-400 to-blue-300 text-white relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-[650px] w-full rounded-t-full bg-blue-600/20" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                AI-Powered Hashtag Analysis for{" "}
-                <span className="border-b-4 border-white">Road Repair</span>{" "}
-                Prioritization
+                Better Road for All, Just
+                <span className="border-b-4 border-white text-blue-900">
+                  {" "}
+                  One Tweet
+                </span>{" "}
+                Away
               </h2>
               <p className="text-lg opacity-90">
                 Helps you identify and prioritize road repairs efficiently by
-                analyzing real-time reports from social media using AI-powered
+                analyzing real-time reports from X social media using AI-powered
                 hashtag tracking.
               </p>
-              <div className="bg-white rounded-full flex items-center p-1 pr-2 mt-8 shadow-lg">
+              <div className="bg-white w-1/2 rounded-full flex items-center p-1 pr-2 mt-8 shadow-lg">
                 <div className="flex-1">
                   <div className="relative">
-                    <select className="appearance-none bg-transparent w-full py-3 pl-4 pr-8 text-gray-700 leading-tight focus:outline-none">
-                      <option>Road Name/Report Number</option>
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                      <svg
-                        className="fill-current h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                      </svg>
+                    <div className="pointer-events-none absolute inset-y-0 pl-4 flex items-center px-2 text-gray-700">
+                      Try on our website v0.2!
                     </div>
                   </div>
                 </div>
-                <button className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
+                <a
+                  href="https://streettweets.vercel.app/report"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors"
+                >
+                  <Rocket className="h-5 w-5" />
+                </a>
               </div>
             </div>
             <div className="hidden md:block">
               <Image
-                src="/assets/road.png"
+                src="/assets/mockup.png"
                 alt="Road repair workers illustration"
                 width={500}
                 height={400}
@@ -242,9 +242,6 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <button className="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md transition-colors">
-                Learn More
-              </button>
             </div>
           </div>
         </div>

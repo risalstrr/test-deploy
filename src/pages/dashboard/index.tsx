@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-// import Head from "next/head";
 
-import { Download, ArrowUp, ChevronRight } from "lucide-react";
+import { ArrowUp, ChevronRight } from "lucide-react";
 
 export default function Dashboard() {
   return (
@@ -71,10 +70,6 @@ export default function Dashboard() {
             </h2>
             <p className="text-gray-500">Overview of report statistics</p>
           </div>
-          <button className="mt-4 md:mt-0 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors">
-            <Download size={18} />
-            <span>Download Report</span>
-          </button>
         </div>
 
         {/* Stats Cards */}

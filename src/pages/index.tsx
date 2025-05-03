@@ -107,7 +107,7 @@ export default function Home() {
                 <div className="flex-1">
                   <div className="relative">
                     <div className="pointer-events-none absolute inset-y-0 pl-4 flex items-center px-2 text-gray-700">
-                      Try on our website v0.2!
+                      Try on our website too!
                     </div>
                   </div>
                 </div>

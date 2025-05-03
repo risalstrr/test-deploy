@@ -403,7 +403,7 @@ export default function Report() {
                     <p className="text-sm mt-1">
                       Use hashtag{" "}
                       <span className="text-blue-500 font-medium">
-                        #MarkTheStreets
+                        #XMarksTheStreet
                       </span>{" "}
                       to submit reports automatically.
                     </p>

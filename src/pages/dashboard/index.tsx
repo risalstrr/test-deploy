@@ -172,16 +172,37 @@ export default function Dashboard() {
 
         {/* Charts Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* Report Distribution */}
           <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Report Distribution</h3>
-            <div className="aspect-w-16 aspect-h-9 relative">
-              <Image
-                src="/placeholder.svg?height=300&width=400"
-                alt="Heat map of report distribution"
-                width={400}
-                height={300}
-                className="rounded-md"
-              />
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold">Report Distribution</h3>
+              <div className="flex items-center gap-2">
+                <select className="text-sm border rounded-md px-2 py-1 bg-white">
+                  <option>This Month</option>
+                  <option>Last Month</option>
+                  <option>This Year</option>
+                </select>
+                <button className="text-gray-400 hover:text-gray-600">
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+            </div>
+            <div className="relative">
+              <HeatMapChart />
+              <div className="absolute bottom-0 right-0 bg-white bg-opacity-90 p-2 rounded-tl-md flex items-center gap-2 text-xs">
+                <span className="flex items-center gap-1">
+                  <span className="inline-block w-3 h-3 bg-blue-200 rounded-sm"></span>
+                  <span>Low</span>
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="inline-block w-3 h-3 bg-blue-400 rounded-sm"></span>
+                  <span>Medium</span>
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="inline-block w-3 h-3 bg-blue-600 rounded-sm"></span>
+                  <span>High</span>
+                </span>
+              </div>
             </div>
           </div>
 
@@ -237,84 +258,39 @@ export default function Dashboard() {
                 time="1 hour ago"
               />
             </div>
+          </div>
+        </div>
 
-            <div className="mt-8 text-center">
-              <h4 className="text-base font-medium mb-4">
-                Specialize analytical features coming soon!
-              </h4>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="flex items-center justify-center gap-2 border border-gray-300 bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-2 rounded-md transition-colors">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9"
-                      stroke="#4B5563"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12 15V3"
-                      stroke="#4B5563"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M9 6L12 3L15 6"
-                      stroke="#4B5563"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span>Login</span>
-                </button>
-                <button className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M8.5 11C10.7091 11 12.5 9.20914 12.5 7C12.5 4.79086 10.7091 3 8.5 3C6.29086 3 4.5 4.79086 4.5 7C4.5 9.20914 6.29086 11 8.5 11Z"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M20 8V14"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M23 11H17"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span>Register</span>
-                </button>
+        {/* Trend Analysis Chart */}
+        <div className="mb-8">
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="flex justify-between items-center mb-4">
+              <div>
+                <h3 className="text-lg font-semibold">
+                  Report Trends & Response Time Analysis
+                </h3>
+                <p className="text-sm text-gray-500">
+                  Track report volume and average response time over the past 12
+                  months
+                </p>
               </div>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="inline-block w-3 h-3 bg-blue-500 rounded-full"></span>
+                  <span className="text-sm text-gray-600">Reports</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="inline-block w-3 h-3 bg-green-500 rounded-full"></span>
+                  <span className="text-sm text-gray-600">Resolved</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="inline-block w-3 h-3 bg-red-400 rounded-full"></span>
+                  <span className="text-sm text-gray-600">Response Time</span>
+                </div>
+              </div>
+            </div>
+            <div className="h-80 w-full">
+              <TrendChart />
             </div>
           </div>
         </div>
@@ -582,6 +558,361 @@ function BarChart() {
       </text>
       <text x="420" y="195" textAnchor="middle" fontSize="6" fill="#6B7280">
         Lampung
+      </text>
+    </svg>
+  );
+}
+
+// Heat Map Chart for Report Distribution
+function HeatMapChart() {
+  return (
+    <div className="w-full h-[300px] overflow-hidden rounded-md">
+      <svg viewBox="0 0 500 300" className="w-full h-full">
+        {/* Indonesia map outline - simplified */}
+        <path
+          d="M50,150 C100,120 150,130 200,140 C250,150 300,120 350,130 C400,140 450,160 480,150"
+          fill="none"
+          stroke="#E5E7EB"
+          strokeWidth="2"
+        />
+
+        {/* Heat map grid */}
+        {Array.from({ length: 10 }).map((_, rowIndex) =>
+          Array.from({ length: 15 }).map((_, colIndex) => {
+            // Generate random heat value for demonstration
+            const heatValue = Math.random();
+            let fillColor = "#EFF6FF"; // Very low (blue-50)
+
+            if (heatValue > 0.8) fillColor = "#1E40AF"; // Very high (blue-800)
+            else if (heatValue > 0.6) fillColor = "#2563EB"; // High (blue-600)
+            else if (heatValue > 0.4)
+              fillColor = "#3B82F6"; // Medium (blue-500)
+            else if (heatValue > 0.2) fillColor = "#60A5FA"; // Low (blue-400)
+            else if (heatValue > 0.1) fillColor = "#93C5FD"; // Very low (blue-300)
+
+            return (
+              <rect
+                key={`${rowIndex}-${colIndex}`}
+                x={colIndex * 30 + 20}
+                y={rowIndex * 25 + 20}
+                width="25"
+                height="20"
+                fill={fillColor}
+                rx="2"
+                opacity={0.8 + heatValue * 0.2}
+              />
+            );
+          })
+        )}
+
+        {/* City markers */}
+        <circle cx="120" cy="100" r="4" fill="#1D4ED8" />
+        <text x="120" y="90" fontSize="8" textAnchor="middle" fill="#1D4ED8">
+          Jakarta
+        </text>
+
+        <circle cx="200" cy="120" r="4" fill="#1D4ED8" />
+        <text x="200" y="110" fontSize="8" textAnchor="middle" fill="#1D4ED8">
+          Surabaya
+        </text>
+
+        <circle cx="150" cy="80" r="4" fill="#1D4ED8" />
+        <text x="150" y="70" fontSize="8" textAnchor="middle" fill="#1D4ED8">
+          Bandung
+        </text>
+
+        <circle cx="300" cy="150" r="4" fill="#1D4ED8" />
+        <text x="300" y="140" fontSize="8" textAnchor="middle" fill="#1D4ED8">
+          Makassar
+        </text>
+
+        <circle cx="250" cy="100" r="4" fill="#1D4ED8" />
+        <text x="250" y="90" fontSize="8" textAnchor="middle" fill="#1D4ED8">
+          Semarang
+        </text>
+
+        {/* Annotations */}
+        <circle cx="120" cy="100" r="15" fill="#1D4ED8" fillOpacity="0.2" />
+        <circle cx="200" cy="120" r="20" fill="#1D4ED8" fillOpacity="0.2" />
+
+        {/* Legend */}
+        <text x="20" y="280" fontSize="10" fill="#4B5563" fontWeight="bold">
+          Report Density
+        </text>
+        <text x="20" y="295" fontSize="8" fill="#6B7280">
+          Based on geographic distribution of reports
+        </text>
+      </svg>
+    </div>
+  );
+}
+
+// Trend Chart for Report Trends and Response Time
+function TrendChart() {
+  return (
+    <svg viewBox="0 0 800 400" className="w-full h-full">
+      {/* Background grid */}
+      {Array.from({ length: 6 }).map((_, i) => (
+        <line
+          key={`grid-h-${i}`}
+          x1="60"
+          y1={50 + i * 60}
+          x2="750"
+          y2={50 + i * 60}
+          stroke="#E5E7EB"
+          strokeWidth="1"
+          strokeDasharray="5,5"
+        />
+      ))}
+      {Array.from({ length: 13 }).map((_, i) => (
+        <line
+          key={`grid-v-${i}`}
+          x1={60 + i * 55}
+          y1="50"
+          x2={60 + i * 55}
+          y2="350"
+          stroke="#E5E7EB"
+          strokeWidth="1"
+          strokeDasharray="5,5"
+        />
+      ))}
+
+      {/* X and Y axes */}
+      <line
+        x1="60"
+        y1="350"
+        x2="750"
+        y2="350"
+        stroke="#9CA3AF"
+        strokeWidth="2"
+      />
+      <line x1="60" y1="50" x2="60" y2="350" stroke="#9CA3AF" strokeWidth="2" />
+
+      {/* Y-axis labels - left (reports) */}
+      {Array.from({ length: 6 }).map((_, i) => (
+        <text
+          key={`y-label-${i}`}
+          x="55"
+          y={350 - i * 60}
+          textAnchor="end"
+          fontSize="10"
+          fill="#6B7280"
+        >
+          {i * 50}
+        </text>
+      ))}
+
+      {/* Y-axis labels - right (response time) */}
+      {Array.from({ length: 6 }).map((_, i) => (
+        <text
+          key={`y2-label-${i}`}
+          x="755"
+          y={350 - i * 60}
+          textAnchor="start"
+          fontSize="10"
+          fill="#F87171"
+        >
+          {i * 4}h
+        </text>
+      ))}
+
+      {/* X-axis labels (months) */}
+      {[
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+      ].map((month, i) => (
+        <text
+          key={`x-label-${i}`}
+          x={60 + (i + 1) * 55}
+          y="370"
+          textAnchor="middle"
+          fontSize="10"
+          fill="#6B7280"
+        >
+          {month}
+        </text>
+      ))}
+
+      {/* Data points for reports received */}
+      <polyline
+        points="
+          115,290
+          170,260
+          225,240
+          280,200
+          335,180
+          390,150
+          445,170
+          500,190
+          555,160
+          610,130
+          665,120
+          720,100
+        "
+        fill="none"
+        stroke="#3B82F6"
+        strokeWidth="3"
+      />
+
+      {/* Data points for reports resolved */}
+      <polyline
+        points="
+          115,310
+          170,280
+          225,270
+          280,230
+          335,210
+          390,180
+          445,190
+          500,210
+          555,180
+          610,150
+          665,140
+          720,120
+        "
+        fill="none"
+        stroke="#10B981"
+        strokeWidth="3"
+      />
+
+      {/* Area under reports received line */}
+      <path
+        d="
+          M115,290
+          L170,260
+          L225,240
+          L280,200
+          L335,180
+          L390,150
+          L445,170
+          L500,190
+          L555,160
+          L610,130
+          L665,120
+          L720,100
+          L720,350
+          L115,350
+          Z
+        "
+        fill="#3B82F6"
+        fillOpacity="0.1"
+      />
+
+      {/* Area under reports resolved line */}
+      <path
+        d="
+          M115,310
+          L170,280
+          L225,270
+          L280,230
+          L335,210
+          L390,180
+          L445,190
+          L500,210
+          L555,180
+          L610,150
+          L665,140
+          L720,120
+          L720,350
+          L115,350
+          Z
+        "
+        fill="#10B981"
+        fillOpacity="0.1"
+      />
+
+      <polyline
+        points="
+          115,200
+          170,220
+          225,240
+          280,210
+          335,190
+          390,170
+          445,150
+          500,130
+          555,120
+          610,100
+          665,90
+          720,80
+        "
+        fill="none"
+        stroke="#F87171"
+        strokeWidth="3"
+        strokeDasharray="5,3"
+      />
+
+      {[200, 220, 240, 210, 190, 170, 150, 130, 120, 100, 90, 80].map(
+        (y, i) => (
+          <circle
+            key={`resp-point-${i}`}
+            cx={115 + i * 55}
+            cy={y}
+            r="4"
+            fill="#F87171"
+          />
+        )
+      )}
+
+      <circle cx="665" cy="120" r="6" fill="#3B82F6" fillOpacity="0.5" />
+      <line
+        x1="665"
+        y1="120"
+        x2="700"
+        y2="90"
+        stroke="#3B82F6"
+        strokeWidth="1"
+      />
+      <rect
+        x="700"
+        y="70"
+        width="80"
+        height="40"
+        rx="4"
+        fill="white"
+        stroke="#E5E7EB"
+      />
+      <text
+        x="740"
+        y="90"
+        textAnchor="middle"
+        fontSize="10"
+        fill="#3B82F6"
+        fontWeight="bold"
+      >
+        250 Reports
+      </text>
+      <text x="740" y="105" textAnchor="middle" fontSize="8" fill="#6B7280">
+        March 2023
+      </text>
+
+      <rect
+        x="555"
+        y="50"
+        width="165"
+        height="300"
+        fill="#3B82F6"
+        fillOpacity="0.05"
+      />
+      <text
+        x="637.5"
+        y="40"
+        textAnchor="middle"
+        fontSize="10"
+        fill="#3B82F6"
+        fontWeight="bold"
+      >
+        Improved Response Time
       </text>
     </svg>
   );

@@ -33,7 +33,7 @@ export default function Track() {
 
     try {
       const res = await fetch(
-        `https://542a-202-158-77-58.ngrok-free.app/get-report-by-id?report_id=${reportId}`,
+        `https://hackvidia-rawrxd-122248001451.us-central1.run.app/get-report-by-id?report_id=${reportId}`,
         {
           method: "POST",
           headers: {

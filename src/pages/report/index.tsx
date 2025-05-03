@@ -271,6 +271,7 @@ export default function Report() {
     image_url: "",
     location: "",
     damage_level: "",
+    report_id: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -333,6 +334,9 @@ export default function Report() {
             </p>
             <p className="text-gray-800 mb-2">
               ⚠️ <strong>Severity:</strong> {reportInfo.damage_level}
+            </p>
+            <p className="text-gray-800 mb-2">
+              🆔 <strong>Your Report ID:</strong> {reportInfo.report_id}
             </p>
             <button
               className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
